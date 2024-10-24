@@ -1,0 +1,105 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <style>
+        .front {
+            background-image: linear-gradient(to bottom, rgba(56, 55, 55, 0.644), rgba(109, 108, 109, 0.644)),
+            url('{% static "images/school.jpg" %}');
+            background-size: cover; 
+            background-position: center; 
+            height: 750px; 
+            width: 100%; 
+        }
+        .header {
+            font-size: 50px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            color: white;
+            text-align: center;
+            padding-top: 250px; /* Adjust for better visibility */
+        }
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #894646;
+        }
+        li {
+            float: left;
+        }
+        li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        li a:hover {
+            background-color: #111;
+        }
+        .footer {
+            background-color: rgb(153, 153, 211);
+            padding: 5px;
+            color: #111;
+        }
+        .content-container {
+            padding: 50px 20px; /* Padding for the full-width section */
+            background: rgba(244, 239, 239, 0.8);
+            text-align: center;
+        }
+        .dialogue {
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+        .about-text {
+            max-width: 100%; /* Full width */
+            margin-bottom: 20px; /* Space between text and images */
+            text-align: center; /* Center align text */
+        }
+        .image-collage {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); /* Two columns */
+            gap: 10px; /* Space between images */
+        }
+        .image-collage img {
+            width: 100%; /* Full width of the grid item */
+            border-radius: 8px; /* Rounded corners */
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <ul>
+            <li><a class="active" href="{% url 'home' %}">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="{% url 'student_list' %}">Student Details</a></li>
+            <li><a href="{% url 'library_history_list' %}">Library History</a></li>
+            <li><a href="{% url 'fees_history_list' %}">Fees Details</a></li>
+            <li><a href="{% url 'index' %}">Logout</a></li>
+        </ul>
+    </div>
+    <div class="front">
+        <header class="header">
+            <div class="sn">Marshal's <br> School of Management Studies</div>
+        </header>
+    </div>
+    <div class="content-container">
+        <h1>Welcome to Marshal's School</h1>
+        <p class="dialogue">"At Marshal's School, we embrace a holistic approach to education, focusing on both academic excellence and personal growth."</p>
+        <p class="dialogue">"Our dedicated faculty is committed to inspiring and guiding each student on their unique journey."</p>
+        <p class="dialogue">"We believe in the power of community, fostering an environment where students, parents, and teachers work together for success."</p>
+        <p class="dialogue">"Join us in shaping the leaders of tomorrow, equipped with the skills and values necessary to thrive in an ever-changing world."</p>
+      </div>
+    <div class="footer">
+        <footer class="text-center mt-4">
+            <p>&copy; Marshal's School of Management. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>
